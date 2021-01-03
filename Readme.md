@@ -10,3 +10,5 @@ but it might be useful for other things, too.
 
 Internally, this uses dbus and logind to receive notifications when the system
 becomes idle, and Unix signals to control the running job.
+
+To use it you need pydbus installed.
