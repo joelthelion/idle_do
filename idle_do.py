@@ -15,7 +15,6 @@ class Job:
         with a dbus signal handler """
 
     def __init__(self):
-        self.running = False
         self.proc = None
 
     def create(self):
