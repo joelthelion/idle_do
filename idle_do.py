@@ -16,10 +16,16 @@ class Job:
 
     def __init__(self):
         self.proc = None
+        if len(sys.argv) < 2:
+            log.error("No command line provided")
+            sys.exit(1)
+        self.command = sys.argv[1:]
+        log.info(f"idle_do job created with the following command line: "
+                 f"{self.command}")
 
     def create(self):
         log.info("Creating job process")
-        self.proc = sp.Popen(sys.argv[1:])
+        self.proc = sp.Popen(self.command)
 
     def check_running(self):
         if self.proc is None:
